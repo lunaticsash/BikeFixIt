@@ -1,12 +1,18 @@
 [
   {
     "symptom": "Bike won't start",
-    "keywords": ["not starting", "no start", "dead", "wont crank", "self start not working"],
+    "keywords": [
+      "not starting",
+      "no start",
+      "dead",
+      "wont crank",
+      "self start not working"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the self-start button make any sound at all?",
-      "Are the headlight and indicators working when you turn the key?",
-      "Did you check if there's fuel in the tank?"
+      "Does the self-start button make a clicking or cranking sound when you press it?",
+      "Are the headlights and horn working properly when you turn the key?",
+      "Is there enough petrol in the tank?"
     ],
     "causes": [
       {
@@ -35,12 +41,18 @@
   },
   {
     "symptom": "Strange noise from engine",
-    "keywords": ["engine noise", "knocking", "grinding", "rattling", "tapping sound"],
+    "keywords": [
+      "engine noise",
+      "knocking",
+      "grinding",
+      "rattling",
+      "tapping sound"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Is it a knocking/tapping sound or a grinding sound?",
-      "Does the noise happen only when accelerating, or all the time?",
-      "When did you last change the engine oil?"
+      "Is the sound a loose rattling chain noise?",
+      "Does the noise get louder only when you accelerate?",
+      "Has it been more than 3 months or 3000 km since your last engine oil change?"
     ],
     "causes": [
       {
@@ -64,12 +76,18 @@
   },
   {
     "symptom": "Brakes feel weak or not stopping properly",
-    "keywords": ["brake failure", "weak brakes", "brake not working", "spongy brake", "long brake distance"],
+    "keywords": [
+      "brake failure",
+      "weak brakes",
+      "brake not working",
+      "spongy brake",
+      "long brake distance"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Is it the front brake, rear brake, or both that feel weak?",
-      "Does the brake lever or pedal feel spongy/soft when pressed?",
-      "Have you noticed any fluid leaking near the brake area (if disc brake)?"
+      "Does the brake lever touch the handle completely when you press it?",
+      "Does the brake lever feel spongy or very soft when pressed?",
+      "Can you see any fluid leaking near the wheel or brake wires?"
     ],
     "causes": [
       {
@@ -93,12 +111,17 @@
   },
   {
     "symptom": "Mileage has dropped suddenly",
-    "keywords": ["low mileage", "fuel efficiency drop", "more petrol consumption", "mileage issue"],
+    "keywords": [
+      "low mileage",
+      "fuel efficiency drop",
+      "more petrol consumption",
+      "mileage issue"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Has your riding style or traffic conditions changed recently?",
-      "When did you last service the bike or clean the air filter?",
-      "Are the tires properly inflated?"
+      "Do your tyres look a bit flat or have low air pressure?",
+      "Has it been a long time since you got the air filter cleaned or changed?",
+      "Does the engine feel rough or struggle to pick up speed?"
     ],
     "causes": [
       {
@@ -122,12 +145,17 @@
   },
   {
     "symptom": "Smoke coming from exhaust",
-    "keywords": ["exhaust smoke", "white smoke", "black smoke", "smoke from silencer"],
+    "keywords": [
+      "exhaust smoke",
+      "white smoke",
+      "black smoke",
+      "smoke from silencer"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "What color is the smoke — white/blue, black, or grey?",
-      "Does the smoke happen all the time or only at startup?",
-      "Have you noticed any burning smell along with the smoke?"
+      "Is the smoke black and sooty?",
+      "Is the smoke white or blue with a strong burning oil smell?",
+      "Does the smoke come out continuously while you are riding?"
     ],
     "causes": [
       {
@@ -146,12 +174,18 @@
   },
   {
     "symptom": "Self-start makes clicking sound",
-    "keywords": ["clicking sound", "self start click", "starter click", "battery click", "relay sound"],
+    "keywords": [
+      "clicking sound",
+      "self start click",
+      "starter click",
+      "battery click",
+      "relay sound"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the engine crank after the clicking sound or only click once?",
-      "Are the headlight and horn weak when the key is on?",
-      "Does the bike start with kick-start?"
+      "Is the horn sounding very weak when you press it?",
+      "Does the bike start easily when you use the kick-start?",
+      "Are the battery wires looking loose or covered in white powder?"
     ],
     "causes": [
       {
@@ -175,12 +209,18 @@
   },
   {
     "symptom": "Bike stops while riding",
-    "keywords": ["stops while riding", "engine shuts off", "bike turns off", "scooter stops suddenly", "engine dies"],
+    "keywords": [
+      "stops while riding",
+      "engine shuts off",
+      "bike turns off",
+      "scooter stops suddenly",
+      "engine dies"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does it start again immediately after stopping?",
-      "Does it stop more often at low speed or traffic signals?",
-      "Was the fuel level low when this happened?"
+      "Was the petrol tank almost empty when the bike stopped?",
+      "Does the engine switch off only when you slow down or stop at a signal?",
+      "Does the bike jerk or misfire right before shutting off?"
     ],
     "causes": [
       {
@@ -209,12 +249,18 @@
   },
   {
     "symptom": "Engine stops at traffic signal or idle",
-    "keywords": ["stops at signal", "engine off at idle", "idle problem", "low rpm", "bike stalls"],
+    "keywords": [
+      "stops at signal",
+      "engine off at idle",
+      "idle problem",
+      "low rpm",
+      "bike stalls"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the engine stop only when you release the accelerator?",
-      "Does it happen after the engine warms up?",
-      "When was the last carburetor or throttle body cleaning done?"
+      "Does the engine die the moment you leave the accelerator completely?",
+      "Has the air filter been cleaned in the last 2-3 months?",
+      "Does the bike feel like it's struggling to breathe or choking?"
     ],
     "causes": [
       {
@@ -238,12 +284,18 @@
   },
   {
     "symptom": "Poor pickup or slow acceleration",
-    "keywords": ["poor pickup", "low pickup", "slow acceleration", "power loss", "bike feels heavy"],
+    "keywords": [
+      "poor pickup",
+      "low pickup",
+      "slow acceleration",
+      "power loss",
+      "bike feels heavy"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the engine rev but the vehicle does not gain speed properly?",
-      "Is the issue worse with a pillion rider or uphill?",
-      "When was the last service done?"
+      "Does the engine make a loud revving noise without increasing speed?",
+      "Do the tyres have less air than usual?",
+      "Has it been over 4000 km since your last full service?"
     ],
     "causes": [
       {
@@ -272,12 +324,18 @@
   },
   {
     "symptom": "Bike vibrates too much while riding",
-    "keywords": ["vibration", "handle vibration", "bike shaking", "scooter vibration", "high speed vibration"],
+    "keywords": [
+      "vibration",
+      "handle vibration",
+      "bike shaking",
+      "scooter vibration",
+      "high speed vibration"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Do you feel vibration mainly in the handle, seat, or footrest?",
-      "Does it happen only at high speed?",
-      "Did the issue start after a puncture repair or tire change?"
+      "Do you feel the vibration mostly in the handle while turning or going fast?",
+      "Are your tyres looking old, worn out, or lacking proper air pressure?",
+      "Do you hear a rattling sound from the engine area when it vibrates?"
     ],
     "causes": [
       {
@@ -306,12 +364,18 @@
   },
   {
     "symptom": "Chain makes noise",
-    "keywords": ["chain noise", "chain loose", "chain sound", "chain khat khat", "chain rubbing"],
+    "keywords": [
+      "chain noise",
+      "chain loose",
+      "chain sound",
+      "chain khat khat",
+      "chain rubbing"
+    ],
     "vehicle_type": "bike",
     "disambiguating_questions": [
-      "Is the noise a loose rattling sound or a dry rubbing sound?",
-      "Does the sound increase while accelerating?",
-      "When was the chain last lubricated or tightened?"
+      "Does the chain look dry or rusty?",
+      "Is the chain hanging loose when you push it with your finger?",
+      "Does the noise sound like a loud 'khat khat' when you pick up speed?"
     ],
     "causes": [
       {
@@ -335,12 +399,18 @@
   },
   {
     "symptom": "Gear shifting is hard",
-    "keywords": ["hard gear shift", "gear tight", "gear stuck", "difficulty changing gear", "gear problem"],
+    "keywords": [
+      "hard gear shift",
+      "gear tight",
+      "gear stuck",
+      "difficulty changing gear",
+      "gear problem"
+    ],
     "vehicle_type": "bike",
     "disambiguating_questions": [
-      "Is the gear hard only when the engine is running?",
-      "Is neutral difficult to find?",
-      "Does the clutch lever feel too tight or too loose?"
+      "Does the clutch lever feel too tight or very loose?",
+      "Is it very difficult to shift into neutral when the bike is stopped?",
+      "Has it been more than 3000 km since your last engine oil change?"
     ],
     "causes": [
       {
@@ -364,12 +434,18 @@
   },
   {
     "symptom": "Clutch feels tight or hard",
-    "keywords": ["clutch tight", "hard clutch", "clutch lever hard", "clutch cable", "hand pain clutch"],
+    "keywords": [
+      "clutch tight",
+      "hard clutch",
+      "clutch lever hard",
+      "clutch cable",
+      "hand pain clutch"
+    ],
     "vehicle_type": "bike",
     "disambiguating_questions": [
-      "Does the clutch lever feel hard from the start or only after riding for some time?",
-      "Is the clutch cable old or rusty?",
-      "Does gear shifting also feel hard?"
+      "Does the clutch wire look dry, rusty, or slightly broken?",
+      "Is the clutch lever very tight the moment you try to press it?",
+      "Are you also facing difficulty while shifting gears?"
     ],
     "causes": [
       {
@@ -393,12 +469,18 @@
   },
   {
     "symptom": "Scooter makes belt or CVT noise",
-    "keywords": ["scooter belt noise", "cvt noise", "activa noise", "scooty acceleration noise", "belt slipping"],
+    "keywords": [
+      "scooter belt noise",
+      "cvt noise",
+      "activa noise",
+      "scooty acceleration noise",
+      "belt slipping"
+    ],
     "vehicle_type": "scooter",
     "disambiguating_questions": [
-      "Does the noise come when accelerating from low speed?",
-      "Does the scooter feel jerky while moving?",
-      "How many kilometers has the scooter run?"
+      "Does the scooter shake or jerk when you start moving from zero speed?",
+      "Do you hear a loud squealing or rubber belt sound when you accelerate?",
+      "Has your scooter run more than 15,000 km without a belt change?"
     ],
     "causes": [
       {
@@ -422,12 +504,17 @@
   },
   {
     "symptom": "Headlight not working",
-    "keywords": ["headlight not working", "light not working", "dim headlight", "low beam high beam issue"],
+    "keywords": [
+      "headlight not working",
+      "light not working",
+      "dim headlight",
+      "low beam high beam issue"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Is only the headlight not working or all lights are off?",
-      "Does high beam work but low beam does not?",
-      "Did the issue start after rain or washing?"
+      "Is the headlight completely off while the indicators and horn are working?",
+      "Does the light work on high beam but fail on low beam?",
+      "Did the headlight stop working right after a heavy rain or water wash?"
     ],
     "causes": [
       {
@@ -456,12 +543,18 @@
   },
   {
     "symptom": "Horn not working",
-    "keywords": ["horn not working", "weak horn", "horn sound low", "no horn", "horn issue"],
+    "keywords": [
+      "horn not working",
+      "weak horn",
+      "horn sound low",
+      "no horn",
+      "horn issue"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Is the horn completely silent or just weak?",
-      "Are the lights and indicators working normally?",
-      "Did this happen after rain or washing?"
+      "Is the horn making a very weak or cracking sound instead of being fully silent?",
+      "Are the headlight and self-start also feeling weak or not working?",
+      "Can you see any disconnected or loose wires near the horn?"
     ],
     "causes": [
       {
@@ -490,12 +583,18 @@
   },
   {
     "symptom": "Battery drains quickly",
-    "keywords": ["battery drain", "battery dead again", "battery weak", "battery discharge", "new battery dead"],
+    "keywords": [
+      "battery drain",
+      "battery dead again",
+      "battery weak",
+      "battery discharge",
+      "new battery dead"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the battery drain overnight or after a few days?",
-      "Have you added extra lights, phone charger, or accessories?",
-      "Does the battery charge properly while riding?"
+      "Have you installed any extra fog lights, loud horns, or mobile chargers recently?",
+      "Is your battery more than 2 years old?",
+      "Are the connections on the battery feeling loose or looking white and rusty?"
     ],
     "causes": [
       {
@@ -524,12 +623,18 @@
   },
   {
     "symptom": "Petrol smell near bike or scooter",
-    "keywords": ["petrol smell", "fuel smell", "smell of petrol", "fuel leak", "petrol leaking"],
+    "keywords": [
+      "petrol smell",
+      "fuel smell",
+      "smell of petrol",
+      "fuel leak",
+      "petrol leaking"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Can you see petrol dripping anywhere?",
-      "Is the smell stronger after filling fuel?",
-      "Is the smell coming near the tank, carburetor, or engine area?"
+      "Can you see any wet petrol drops falling under the engine or carburetor?",
+      "Did you just fill the petrol tank completely up to the brim?",
+      "Is the rubber petrol pipe looking cracked or damaged?"
     ],
     "causes": [
       {
@@ -553,12 +658,18 @@
   },
   {
     "symptom": "Tyre loses air repeatedly",
-    "keywords": ["tyre air leak", "puncture", "air pressure low", "tyre loses air", "slow puncture"],
+    "keywords": [
+      "tyre air leak",
+      "puncture",
+      "air pressure low",
+      "tyre loses air",
+      "slow puncture"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the tyre become flat quickly or slowly over days?",
-      "Is it a tubeless tyre or tube tyre?",
-      "Did the issue start after hitting a pothole?"
+      "Does the tyre take a few days to slowly lose all its air?",
+      "Is the tyre very old and smooth with no grips left?",
+      "Did you recently hit a large pothole very hard?"
     ],
     "causes": [
       {
@@ -587,12 +698,18 @@
   },
   {
     "symptom": "Bike pulls to one side",
-    "keywords": ["pulls to one side", "bike going left", "bike going right", "handle not straight", "alignment issue"],
+    "keywords": [
+      "pulls to one side",
+      "bike going left",
+      "bike going right",
+      "handle not straight",
+      "alignment issue"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does it pull left or right when you leave the handle slightly?",
-      "Did the bike recently fall or hit a pothole?",
-      "Is the tyre pressure equal on both tyres?"
+      "Did the bike recently fall down or crash into a pothole?",
+      "Does one of the tyres look like it has less air than the other?",
+      "Do you feel resistance, as if the brakes are slightly applied while riding?"
     ],
     "causes": [
       {
@@ -621,12 +738,18 @@
   },
   {
     "symptom": "Engine overheating",
-    "keywords": ["engine overheating", "engine too hot", "burning smell", "heat from engine", "overheat"],
+    "keywords": [
+      "engine overheating",
+      "engine too hot",
+      "burning smell",
+      "heat from engine",
+      "overheat"
+    ],
     "vehicle_type": "both",
     "disambiguating_questions": [
-      "Does the engine feel hotter than usual after a short ride?",
-      "Is there any burning smell or smoke?",
-      "When was the engine oil last changed?"
+      "Has it been more than 3000 km since your last engine oil change?",
+      "Is the engine covered in a thick layer of mud or dirt?",
+      "Do you notice a burning smell coming from the engine block?"
     ],
     "causes": [
       {

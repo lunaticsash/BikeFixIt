@@ -17,30 +17,33 @@ const messageSchema = new Schema(
 
 const diagnosticSessionSchema = new Schema(
   {
+    originalMessage: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     vehicleType: {
       type: String,
-      enum: ['bike', 'scooter', 'both'],
-      default: 'both',
+      enum: ['bike', 'scooter', 'unknown', 'both'],
+      default: 'unknown',
     },
     vehicleModel: {
       type: String,
-      trim: true,
       default: null,
-      // e.g. "Activa 6G", "Pulsar 150" — optional for now
+    },
+    matchedSymptom: {
+      type: String,
+      default: null,
     },
     conversation: {
       type: [messageSchema],
       default: [],
     },
-    matchedSymptom: {
-      type: String,
-      default: null,
-      // top KB match symptom — for analytics later
-    },
-    finalDiagnosis: {
-      type: String,
-      default: null,
-      // filled when conversation reaches a conclusion
+    conclusion: {
+      concluded_cause: { type: String, default: null },
+      explanation: { type: String, default: null },
+      next_step: { type: String, default: null },
+      est_cost: { type: String, default: null },
     },
     resolved: {
       type: Boolean,
