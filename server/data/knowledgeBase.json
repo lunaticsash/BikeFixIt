@@ -1,0 +1,656 @@
+[
+  {
+    "symptom": "Bike won't start",
+    "keywords": ["not starting", "no start", "dead", "wont crank", "self start not working"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the self-start button make any sound at all?",
+      "Are the headlight and indicators working when you turn the key?",
+      "Did you check if there's fuel in the tank?"
+    ],
+    "causes": [
+      {
+        "name": "Dead battery",
+        "fix": "Try kick-start. If it starts, the battery needs charging or replacing.",
+        "est_cost_range": "₹400-800"
+      },
+      {
+        "name": "No fuel",
+        "fix": "Refuel. If it still doesn't start, check the fuel line for blockage.",
+        "est_cost_range": "₹0-100"
+      },
+      {
+        "name": "Spark plug fouled",
+        "fix": "Clean or replace the spark plug.",
+        "est_cost_range": "₹100-200"
+      },
+      {
+        "name": "Carburetor choked",
+        "fix": "Carburetor cleaning needed at a mechanic.",
+        "est_cost_range": "₹200-400"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Bike or scooter won't start, no crank, dead, self-start not working, kick start also fails sometimes. Common causes: dead battery, no fuel, fouled spark plug, choked carburetor."
+  },
+  {
+    "symptom": "Strange noise from engine",
+    "keywords": ["engine noise", "knocking", "grinding", "rattling", "tapping sound"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Is it a knocking/tapping sound or a grinding sound?",
+      "Does the noise happen only when accelerating, or all the time?",
+      "When did you last change the engine oil?"
+    ],
+    "causes": [
+      {
+        "name": "Low or old engine oil",
+        "fix": "Top up or change the engine oil.",
+        "est_cost_range": "₹300-600"
+      },
+      {
+        "name": "Loose chain",
+        "fix": "Get the chain tensioned and lubricated.",
+        "est_cost_range": "₹50-150"
+      },
+      {
+        "name": "Worn out clutch plates",
+        "fix": "Clutch plate replacement needed at a mechanic.",
+        "est_cost_range": "₹800-1500"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Strange noise from engine, knocking, grinding, rattling, tapping sound while riding or accelerating. Common causes: low or old engine oil, loose chain, worn clutch plates."
+  },
+  {
+    "symptom": "Brakes feel weak or not stopping properly",
+    "keywords": ["brake failure", "weak brakes", "brake not working", "spongy brake", "long brake distance"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Is it the front brake, rear brake, or both that feel weak?",
+      "Does the brake lever or pedal feel spongy/soft when pressed?",
+      "Have you noticed any fluid leaking near the brake area (if disc brake)?"
+    ],
+    "causes": [
+      {
+        "name": "Worn brake pads/shoes",
+        "fix": "Brake pads or shoes need replacement. Do not ride until fixed.",
+        "est_cost_range": "₹300-700"
+      },
+      {
+        "name": "Air in brake line or low brake fluid (disc brake)",
+        "fix": "Brake fluid top-up or bleeding required at a mechanic immediately.",
+        "est_cost_range": "₹200-500"
+      },
+      {
+        "name": "Loose brake cable (drum brake)",
+        "fix": "Brake cable adjustment needed.",
+        "est_cost_range": "₹50-150"
+      }
+    ],
+    "severity": "see-a-mechanic",
+    "embedding_text": "Brakes feel weak, not stopping properly, spongy brake lever, long braking distance, front or rear brake issue. Safety critical issue requiring immediate mechanic attention."
+  },
+  {
+    "symptom": "Mileage has dropped suddenly",
+    "keywords": ["low mileage", "fuel efficiency drop", "more petrol consumption", "mileage issue"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Has your riding style or traffic conditions changed recently?",
+      "When did you last service the bike or clean the air filter?",
+      "Are the tires properly inflated?"
+    ],
+    "causes": [
+      {
+        "name": "Dirty air filter",
+        "fix": "Clean or replace the air filter.",
+        "est_cost_range": "₹100-300"
+      },
+      {
+        "name": "Under-inflated tires",
+        "fix": "Inflate tires to the recommended PSI.",
+        "est_cost_range": "₹0-20"
+      },
+      {
+        "name": "Carburetor needs tuning",
+        "fix": "Carburetor tuning/cleaning at a mechanic.",
+        "est_cost_range": "₹150-400"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Mileage dropped suddenly, fuel efficiency low, consuming more petrol than usual. Common causes: dirty air filter, under-inflated tires, carburetor needs tuning."
+  },
+  {
+    "symptom": "Smoke coming from exhaust",
+    "keywords": ["exhaust smoke", "white smoke", "black smoke", "smoke from silencer"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "What color is the smoke — white/blue, black, or grey?",
+      "Does the smoke happen all the time or only at startup?",
+      "Have you noticed any burning smell along with the smoke?"
+    ],
+    "causes": [
+      {
+        "name": "Engine burning oil (white/blue smoke)",
+        "fix": "Likely worn piston rings or seals — needs mechanic inspection immediately.",
+        "est_cost_range": "₹1000-3000"
+      },
+      {
+        "name": "Rich fuel mixture (black smoke)",
+        "fix": "Carburetor or fuel-air mixture needs adjustment at a mechanic.",
+        "est_cost_range": "₹200-500"
+      }
+    ],
+    "severity": "see-a-mechanic",
+    "embedding_text": "Smoke coming from exhaust or silencer, white blue smoke, black smoke, burning smell. Engine related issue requiring mechanic inspection."
+  },
+  {
+    "symptom": "Self-start makes clicking sound",
+    "keywords": ["clicking sound", "self start click", "starter click", "battery click", "relay sound"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the engine crank after the clicking sound or only click once?",
+      "Are the headlight and horn weak when the key is on?",
+      "Does the bike start with kick-start?"
+    ],
+    "causes": [
+      {
+        "name": "Weak battery",
+        "fix": "Recharge the battery first. If the issue returns, replace the battery.",
+        "est_cost_range": "₹300-1800"
+      },
+      {
+        "name": "Loose or corroded battery terminals",
+        "fix": "Clean and tighten the battery terminals.",
+        "est_cost_range": "₹50-200"
+      },
+      {
+        "name": "Faulty starter relay",
+        "fix": "Starter relay may need replacement.",
+        "est_cost_range": "₹200-600"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Self-start makes clicking sound, starter click but engine not cranking, weak horn and headlight. Common causes: weak battery, loose battery terminals, starter relay fault."
+  },
+  {
+    "symptom": "Bike stops while riding",
+    "keywords": ["stops while riding", "engine shuts off", "bike turns off", "scooter stops suddenly", "engine dies"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does it start again immediately after stopping?",
+      "Does it stop more often at low speed or traffic signals?",
+      "Was the fuel level low when this happened?"
+    ],
+    "causes": [
+      {
+        "name": "Fuel flow issue",
+        "fix": "Check fuel level, fuel pipe, and fuel filter for blockage.",
+        "est_cost_range": "₹100-400"
+      },
+      {
+        "name": "Dirty carburetor",
+        "fix": "Carburetor cleaning and tuning needed.",
+        "est_cost_range": "₹200-500"
+      },
+      {
+        "name": "Faulty spark plug",
+        "fix": "Clean or replace the spark plug.",
+        "est_cost_range": "₹100-250"
+      },
+      {
+        "name": "Idle RPM too low",
+        "fix": "Idle RPM adjustment needed at a mechanic.",
+        "est_cost_range": "₹50-150"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Bike or scooter stops while riding, engine shuts off suddenly, engine dies at signal or low speed. Common causes: fuel flow issue, dirty carburetor, spark plug fault, low idle RPM."
+  },
+  {
+    "symptom": "Engine stops at traffic signal or idle",
+    "keywords": ["stops at signal", "engine off at idle", "idle problem", "low rpm", "bike stalls"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the engine stop only when you release the accelerator?",
+      "Does it happen after the engine warms up?",
+      "When was the last carburetor or throttle body cleaning done?"
+    ],
+    "causes": [
+      {
+        "name": "Idle RPM setting too low",
+        "fix": "Adjust idle RPM so the engine can stay running without throttle.",
+        "est_cost_range": "₹50-150"
+      },
+      {
+        "name": "Dirty carburetor or throttle body",
+        "fix": "Cleaning and tuning required.",
+        "est_cost_range": "₹200-500"
+      },
+      {
+        "name": "Clogged air filter",
+        "fix": "Clean or replace the air filter.",
+        "est_cost_range": "₹100-300"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Engine stops at traffic signal, bike stalls at idle, low RPM issue, engine turns off when accelerator is released. Common causes: idle RPM low, dirty carburetor, clogged air filter."
+  },
+  {
+    "symptom": "Poor pickup or slow acceleration",
+    "keywords": ["poor pickup", "low pickup", "slow acceleration", "power loss", "bike feels heavy"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the engine rev but the vehicle does not gain speed properly?",
+      "Is the issue worse with a pillion rider or uphill?",
+      "When was the last service done?"
+    ],
+    "causes": [
+      {
+        "name": "Dirty air filter",
+        "fix": "Clean or replace the air filter.",
+        "est_cost_range": "₹100-300"
+      },
+      {
+        "name": "Worn clutch plates",
+        "fix": "Clutch plates may need replacement.",
+        "est_cost_range": "₹800-1800"
+      },
+      {
+        "name": "Carburetor tuning issue",
+        "fix": "Fuel-air mixture and carburetor tuning needed.",
+        "est_cost_range": "₹200-500"
+      },
+      {
+        "name": "Low tire pressure",
+        "fix": "Inflate tires to recommended PSI.",
+        "est_cost_range": "₹0-20"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Poor pickup, low pickup, slow acceleration, power loss, bike feels heavy while accelerating. Common causes: dirty air filter, worn clutch plates, carburetor tuning issue, low tire pressure."
+  },
+  {
+    "symptom": "Bike vibrates too much while riding",
+    "keywords": ["vibration", "handle vibration", "bike shaking", "scooter vibration", "high speed vibration"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Do you feel vibration mainly in the handle, seat, or footrest?",
+      "Does it happen only at high speed?",
+      "Did the issue start after a puncture repair or tire change?"
+    ],
+    "causes": [
+      {
+        "name": "Loose engine mounting bolts",
+        "fix": "Bolts need inspection and tightening.",
+        "est_cost_range": "₹100-300"
+      },
+      {
+        "name": "Wheel balancing or alignment issue",
+        "fix": "Wheel inspection, balancing, or alignment needed.",
+        "est_cost_range": "₹200-600"
+      },
+      {
+        "name": "Worn tire or uneven tire pressure",
+        "fix": "Correct tire pressure or replace worn tire.",
+        "est_cost_range": "₹0-2500"
+      },
+      {
+        "name": "Loose handle cone set",
+        "fix": "Handle cone set adjustment or replacement needed.",
+        "est_cost_range": "₹200-800"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Bike vibrates too much while riding, handle vibration, scooter shaking, vibration at high speed. Common causes: loose engine mounting, wheel balancing issue, worn tire, loose handle cone set."
+  },
+  {
+    "symptom": "Chain makes noise",
+    "keywords": ["chain noise", "chain loose", "chain sound", "chain khat khat", "chain rubbing"],
+    "vehicle_type": "bike",
+    "disambiguating_questions": [
+      "Is the noise a loose rattling sound or a dry rubbing sound?",
+      "Does the sound increase while accelerating?",
+      "When was the chain last lubricated or tightened?"
+    ],
+    "causes": [
+      {
+        "name": "Loose chain",
+        "fix": "Get chain slack adjusted to the correct level.",
+        "est_cost_range": "₹50-150"
+      },
+      {
+        "name": "Dry chain",
+        "fix": "Clean and lubricate the chain.",
+        "est_cost_range": "₹100-250"
+      },
+      {
+        "name": "Worn chain sprocket set",
+        "fix": "Replace chain and sprocket kit.",
+        "est_cost_range": "₹900-1800"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Bike chain makes noise, chain loose, dry chain sound, khat khat noise while riding or accelerating. Common causes: loose chain, dry chain, worn chain sprocket set."
+  },
+  {
+    "symptom": "Gear shifting is hard",
+    "keywords": ["hard gear shift", "gear tight", "gear stuck", "difficulty changing gear", "gear problem"],
+    "vehicle_type": "bike",
+    "disambiguating_questions": [
+      "Is the gear hard only when the engine is running?",
+      "Is neutral difficult to find?",
+      "Does the clutch lever feel too tight or too loose?"
+    ],
+    "causes": [
+      {
+        "name": "Clutch cable adjustment issue",
+        "fix": "Adjust clutch free play properly.",
+        "est_cost_range": "₹50-200"
+      },
+      {
+        "name": "Old engine oil",
+        "fix": "Change engine oil with the recommended grade.",
+        "est_cost_range": "₹400-900"
+      },
+      {
+        "name": "Worn clutch plates",
+        "fix": "Clutch plate inspection and replacement may be needed.",
+        "est_cost_range": "₹800-1800"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Gear shifting is hard, gear tight, gear stuck, neutral difficult to find, clutch lever issue. Common causes: clutch cable adjustment, old engine oil, worn clutch plates."
+  },
+  {
+    "symptom": "Clutch feels tight or hard",
+    "keywords": ["clutch tight", "hard clutch", "clutch lever hard", "clutch cable", "hand pain clutch"],
+    "vehicle_type": "bike",
+    "disambiguating_questions": [
+      "Does the clutch lever feel hard from the start or only after riding for some time?",
+      "Is the clutch cable old or rusty?",
+      "Does gear shifting also feel hard?"
+    ],
+    "causes": [
+      {
+        "name": "Dry or rusty clutch cable",
+        "fix": "Lubricate the clutch cable or replace it if damaged.",
+        "est_cost_range": "₹100-400"
+      },
+      {
+        "name": "Incorrect clutch free play",
+        "fix": "Adjust clutch lever free play.",
+        "est_cost_range": "₹50-150"
+      },
+      {
+        "name": "Worn clutch assembly",
+        "fix": "Mechanic inspection needed if cable adjustment does not help.",
+        "est_cost_range": "₹800-2000"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Clutch feels tight, hard clutch lever, hand pain while pressing clutch, clutch cable issue. Common causes: dry clutch cable, incorrect free play, worn clutch assembly."
+  },
+  {
+    "symptom": "Scooter makes belt or CVT noise",
+    "keywords": ["scooter belt noise", "cvt noise", "activa noise", "scooty acceleration noise", "belt slipping"],
+    "vehicle_type": "scooter",
+    "disambiguating_questions": [
+      "Does the noise come when accelerating from low speed?",
+      "Does the scooter feel jerky while moving?",
+      "How many kilometers has the scooter run?"
+    ],
+    "causes": [
+      {
+        "name": "Worn CVT belt",
+        "fix": "CVT belt inspection and replacement may be needed.",
+        "est_cost_range": "₹800-1800"
+      },
+      {
+        "name": "Dirty CVT rollers or clutch",
+        "fix": "CVT cleaning and inspection required.",
+        "est_cost_range": "₹300-800"
+      },
+      {
+        "name": "Worn clutch shoes",
+        "fix": "Clutch shoe replacement may be needed.",
+        "est_cost_range": "₹700-1500"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Scooter makes belt noise, CVT noise, Activa acceleration noise, jerky scooter movement, belt slipping. Common causes: worn CVT belt, dirty rollers, worn clutch shoes."
+  },
+  {
+    "symptom": "Headlight not working",
+    "keywords": ["headlight not working", "light not working", "dim headlight", "low beam high beam issue"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Is only the headlight not working or all lights are off?",
+      "Does high beam work but low beam does not?",
+      "Did the issue start after rain or washing?"
+    ],
+    "causes": [
+      {
+        "name": "Fused headlight bulb",
+        "fix": "Replace the headlight bulb.",
+        "est_cost_range": "₹100-400"
+      },
+      {
+        "name": "Loose wiring or connector",
+        "fix": "Wiring connector inspection and tightening needed.",
+        "est_cost_range": "₹100-300"
+      },
+      {
+        "name": "Weak battery or charging issue",
+        "fix": "Battery and charging system should be checked.",
+        "est_cost_range": "₹100-800"
+      },
+      {
+        "name": "Faulty switch",
+        "fix": "Headlight switch may need cleaning or replacement.",
+        "est_cost_range": "₹150-500"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Headlight not working, dim headlight, low beam high beam issue, bike light not working. Common causes: fused bulb, loose wiring, weak battery, faulty switch."
+  },
+  {
+    "symptom": "Horn not working",
+    "keywords": ["horn not working", "weak horn", "horn sound low", "no horn", "horn issue"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Is the horn completely silent or just weak?",
+      "Are the lights and indicators working normally?",
+      "Did this happen after rain or washing?"
+    ],
+    "causes": [
+      {
+        "name": "Loose horn wire",
+        "fix": "Horn wiring connection needs tightening.",
+        "est_cost_range": "₹50-200"
+      },
+      {
+        "name": "Weak battery",
+        "fix": "Recharge or test the battery.",
+        "est_cost_range": "₹100-800"
+      },
+      {
+        "name": "Faulty horn unit",
+        "fix": "Replace the horn.",
+        "est_cost_range": "₹150-500"
+      },
+      {
+        "name": "Faulty horn switch",
+        "fix": "Switch cleaning or replacement required.",
+        "est_cost_range": "₹100-400"
+      }
+    ],
+    "severity": "DIY-safe",
+    "embedding_text": "Horn not working, weak horn, horn sound low, no horn sound. Common causes: loose wire, weak battery, faulty horn unit, faulty horn switch."
+  },
+  {
+    "symptom": "Battery drains quickly",
+    "keywords": ["battery drain", "battery dead again", "battery weak", "battery discharge", "new battery dead"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the battery drain overnight or after a few days?",
+      "Have you added extra lights, phone charger, or accessories?",
+      "Does the battery charge properly while riding?"
+    ],
+    "causes": [
+      {
+        "name": "Old or weak battery",
+        "fix": "Battery replacement may be needed if it cannot hold charge.",
+        "est_cost_range": "₹900-1800"
+      },
+      {
+        "name": "Charging coil or regulator issue",
+        "fix": "Charging system inspection needed.",
+        "est_cost_range": "₹300-1500"
+      },
+      {
+        "name": "Electrical accessory draining battery",
+        "fix": "Remove or rewire extra accessories properly.",
+        "est_cost_range": "₹200-800"
+      },
+      {
+        "name": "Loose battery terminals",
+        "fix": "Clean and tighten battery terminals.",
+        "est_cost_range": "₹50-200"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Battery drains quickly, battery dead again, new battery discharged, battery not holding charge. Common causes: old battery, charging coil issue, regulator issue, extra accessory drain, loose terminals."
+  },
+  {
+    "symptom": "Petrol smell near bike or scooter",
+    "keywords": ["petrol smell", "fuel smell", "smell of petrol", "fuel leak", "petrol leaking"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Can you see petrol dripping anywhere?",
+      "Is the smell stronger after filling fuel?",
+      "Is the smell coming near the tank, carburetor, or engine area?"
+    ],
+    "causes": [
+      {
+        "name": "Fuel pipe leakage",
+        "fix": "Do not ride. Fuel pipe needs inspection or replacement immediately.",
+        "est_cost_range": "₹100-400"
+      },
+      {
+        "name": "Loose fuel cap or overflow",
+        "fix": "Check fuel cap seal and avoid overfilling.",
+        "est_cost_range": "₹0-300"
+      },
+      {
+        "name": "Carburetor overflow",
+        "fix": "Carburetor float or fuel line inspection needed.",
+        "est_cost_range": "₹200-600"
+      }
+    ],
+    "severity": "see-a-mechanic",
+    "embedding_text": "Petrol smell near bike or scooter, fuel smell, fuel leak, petrol leaking, smell near tank or carburetor. Safety issue requiring mechanic inspection."
+  },
+  {
+    "symptom": "Tyre loses air repeatedly",
+    "keywords": ["tyre air leak", "puncture", "air pressure low", "tyre loses air", "slow puncture"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the tyre become flat quickly or slowly over days?",
+      "Is it a tubeless tyre or tube tyre?",
+      "Did the issue start after hitting a pothole?"
+    ],
+    "causes": [
+      {
+        "name": "Small puncture",
+        "fix": "Puncture repair needed.",
+        "est_cost_range": "₹50-200"
+      },
+      {
+        "name": "Leaking valve",
+        "fix": "Valve replacement needed.",
+        "est_cost_range": "₹50-150"
+      },
+      {
+        "name": "Bent rim or bead leak",
+        "fix": "Rim inspection and repair needed.",
+        "est_cost_range": "₹200-1000"
+      },
+      {
+        "name": "Worn tyre",
+        "fix": "Tyre replacement may be required.",
+        "est_cost_range": "₹1200-3000"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Tyre loses air repeatedly, slow puncture, air pressure low, tubeless tyre leak, valve leak. Common causes: small puncture, leaking valve, bent rim, worn tyre."
+  },
+  {
+    "symptom": "Bike pulls to one side",
+    "keywords": ["pulls to one side", "bike going left", "bike going right", "handle not straight", "alignment issue"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does it pull left or right when you leave the handle slightly?",
+      "Did the bike recently fall or hit a pothole?",
+      "Is the tyre pressure equal on both tyres?"
+    ],
+    "causes": [
+      {
+        "name": "Unequal tyre pressure",
+        "fix": "Set both tyres to recommended pressure.",
+        "est_cost_range": "₹0-20"
+      },
+      {
+        "name": "Wheel alignment issue",
+        "fix": "Wheel alignment or fork inspection needed.",
+        "est_cost_range": "₹300-1000"
+      },
+      {
+        "name": "Bent handle or fork",
+        "fix": "Mechanic inspection needed after fall or accident.",
+        "est_cost_range": "₹500-2500"
+      },
+      {
+        "name": "Brake drag on one wheel",
+        "fix": "Brake adjustment or caliper cleaning needed.",
+        "est_cost_range": "₹150-700"
+      }
+    ],
+    "severity": "caution",
+    "embedding_text": "Bike pulls to one side, going left or right, handle not straight, alignment issue after fall or pothole. Common causes: unequal tyre pressure, wheel alignment, bent fork, brake drag."
+  },
+  {
+    "symptom": "Engine overheating",
+    "keywords": ["engine overheating", "engine too hot", "burning smell", "heat from engine", "overheat"],
+    "vehicle_type": "both",
+    "disambiguating_questions": [
+      "Does the engine feel hotter than usual after a short ride?",
+      "Is there any burning smell or smoke?",
+      "When was the engine oil last changed?"
+    ],
+    "causes": [
+      {
+        "name": "Low or old engine oil",
+        "fix": "Stop riding for now. Check oil level and change engine oil if needed.",
+        "est_cost_range": "₹400-900"
+      },
+      {
+        "name": "Blocked air flow or dirty engine fins",
+        "fix": "Clean dirt/mud around engine cooling fins.",
+        "est_cost_range": "₹100-300"
+      },
+      {
+        "name": "Engine running lean",
+        "fix": "Carburetor or fuel-air mixture tuning needed.",
+        "est_cost_range": "₹200-500"
+      },
+      {
+        "name": "Internal engine issue",
+        "fix": "Mechanic inspection required if overheating continues.",
+        "est_cost_range": "₹1000-5000"
+      }
+    ],
+    "severity": "see-a-mechanic",
+    "embedding_text": "Engine overheating, engine too hot, burning smell, heat from engine after short ride. Common causes: low engine oil, blocked air flow, lean fuel mixture, internal engine issue."
+  }
+]
