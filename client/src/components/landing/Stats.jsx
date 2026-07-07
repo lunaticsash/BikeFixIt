@@ -16,26 +16,22 @@ export default function Stats() {
   ];
 
   return (
-    <section className={`py-16 border-y transition-colors relative overflow-hidden
-      ${isDark ? 'border-zinc-800 bg-zinc-950' : 'border-zinc-100 bg-zinc-50'}`}>
-      <div aria-hidden className={`pointer-events-none absolute inset-0 opacity-30
-        bg-[linear-gradient(90deg,transparent,rgba(232,25,44,0.06),transparent)]`}
+    <section className={`py-20 md:py-24 border-y transition-colors relative overflow-hidden
+      ${isDark ? 'border-zinc-800 bg-zinc-950' : 'border-zinc-100 bg-gradient-to-b from-zinc-50/80 to-white'}`}>
+      <div aria-hidden className={`pointer-events-none absolute inset-0 opacity-40
+        bg-[linear-gradient(90deg,transparent,rgba(232,25,44,0.05),transparent)]`}
       />
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center relative">
-        {items.map((item) => (
-          <div key={item.label} className="flex flex-col gap-1 group">
-            <p
-              className="text-5xl md:text-6xl font-black tracking-tight transition-transform group-hover:scale-105"
-              style={{ fontFamily: 'Barlow Condensed, sans-serif', color: '#E8192C' }}
-            >
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-3 gap-10 md:gap-12 text-center relative">
+        {items.map((item, i) => (
+          <div key={item.label} className={`flex flex-col gap-2 group animate-fade-in-up stagger-${i + 1}`}>
+            <p className="text-5xl md:text-6xl font-extrabold tracking-tight text-brand transition-transform group-hover:scale-105">
               {item.value}
             </p>
-            <p className={`text-xs uppercase tracking-widest font-semibold
-              ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+            <p className={`text-sm font-semibold uppercase tracking-wider
+              ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
               {item.label}
             </p>
-            <p className={`text-[10px] uppercase tracking-wider mt-0.5
-              ${isDark ? 'text-zinc-700' : 'text-zinc-300'}`}>
+            <p className={`text-xs mt-0.5 ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
               {item.sub}
             </p>
           </div>

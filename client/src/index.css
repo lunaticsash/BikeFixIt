@@ -1,33 +1,160 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
+:root {
+  --brand: #E8192C;
+  --brand-muted: rgba(232, 25, 44, 0.08);
+  --brand-border: rgba(232, 25, 44, 0.15);
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 4px 6px rgba(0, 0, 0, 0.02), 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 40px rgba(232, 25, 44, 0.15);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 * {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 h1, h2, h3, h4, .font-display {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 
-@keyframes hero-drift {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(-30px, 20px) scale(1.05); }
+.text-brand {
+  color: var(--brand);
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+.bg-brand {
+  background-color: var(--brand);
 }
 
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Refined red grid with radial fade */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(232, 25, 44, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 25, 44, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 100%);
 }
 
+.dark .grid-pattern {
+  background-image:
+    linear-gradient(rgba(232, 25, 44, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 25, 44, 0.04) 1px, transparent 1px);
+}
+
+/* Section spacing */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Glass navigation */
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Primary button with ripple */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--brand);
+  color: white;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow), var(--shadow-elevated);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), rgba(255,255,255,0.35) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-primary:active::after {
+  opacity: 1;
+}
+
+/* Nav link underline animation */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand);
+  transition: width 0.25s ease;
+  border-radius: 1px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Card hover lift */
+.glow-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 24px rgba(232, 25, 44, 0.1), var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+.dark .glow-card:hover {
+  box-shadow: 0 0 28px rgba(232, 25, 44, 0.18), 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Brand logo tiles */
+.logo-tile {
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.3s ease;
+}
+
+.logo-tile:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* Badge pill */
+.badge-pill {
+  color: var(--brand);
+  border: 1px solid var(--brand-border);
+  background-color: var(--brand-muted);
+}
+
+/* Chip shimmer */
 .chip-shimmer::after {
   content: '';
   position: absolute;
@@ -44,19 +171,66 @@ h1, h2, h3, h4, .font-display {
   border-radius: inherit;
 }
 
+/* Keyframes */
+@keyframes hero-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-30px, 20px) scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(232, 25, 44, 0); }
   50% { box-shadow: 0 0 20px 0 rgba(232, 25, 44, 0.12); }
 }
 
-.glow-card {
-  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
 }
 
-.glow-card:hover {
-  box-shadow: 0 0 24px rgba(232, 25, 44, 0.12), 0 8px 32px rgba(0, 0, 0, 0.12);
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
 }
 
-.dark .glow-card:hover {
-  box-shadow: 0 0 28px rgba(232, 25, 44, 0.18), 0 8px 32px rgba(0, 0, 0, 0.4);
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .chip-shimmer::after {
+    animation: none !important;
+  }
+
+  .glow-card:hover,
+  .btn-primary:hover {
+    transform: none;
+  }
 }

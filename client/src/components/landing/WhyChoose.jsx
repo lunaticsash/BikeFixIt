@@ -47,42 +47,34 @@ export default function WhyChoose() {
   const { isDark } = useTheme();
 
   return (
-    <section id="why-choose" className={`relative py-24 overflow-hidden transition-colors
-      ${isDark ? 'bg-zinc-950' : 'bg-zinc-50'}`}>
+    <section id="why-choose" className={`relative section-padding overflow-hidden transition-colors
+      ${isDark ? 'bg-zinc-950' : 'bg-white'}`}>
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-0 opacity-40
-          bg-[linear-gradient(rgba(232,25,44,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(232,25,44,0.04)_1px,transparent_1px)]
-          bg-[size:32px_32px]`}
+        className="pointer-events-none absolute inset-0 grid-pattern opacity-60"
       />
 
-      <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left — headline + CTA */}
-          <div className="flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border w-fit"
-              style={{ color: '#E8192C', borderColor: '#E8192C33', backgroundColor: '#E8192C11' }}>
-              Why BikeFixIt
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div className="flex flex-col gap-8">
+            <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full badge-pill w-fit">
+              Why choose us
             </span>
-            <h2
-              className={`text-4xl md:text-6xl font-black uppercase leading-none ${isDark ? 'text-white' : 'text-zinc-900'}`}
-              style={{ fontFamily: 'Barlow Condensed, sans-serif' }}
-            >
-              Why you should
-              <span className="block" style={{ color: '#E8192C' }}>choose us</span>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}>
+              Built for riders who refuse to be
+              <span className="block text-brand mt-1">overcharged.</span>
             </h2>
-            <p className={`text-base leading-relaxed max-w-md ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+            <p className={`text-base md:text-lg leading-relaxed max-w-md ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
               Mechanics have information. You should too. BikeFixIt is the diagnostic layer between you and the garage — fast, free, and in your language.
             </p>
 
-            {/* Highlight stat block */}
-            <div className={`rounded-2xl p-6 border glow-card
-              ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200'}`}>
-              <div className="flex items-center gap-4">
-                <div className="text-5xl font-black" style={{ fontFamily: 'Barlow Condensed, sans-serif', color: '#E8192C' }}>
+            <div className={`rounded-2xl p-7 border glow-card
+              ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-zinc-50 border-zinc-200 shadow-[var(--shadow-soft)]'}`}>
+              <div className="flex items-center gap-5">
+                <div className="text-5xl md:text-6xl font-extrabold text-brand shrink-0">
                   73%
                 </div>
-                <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                <p className={`text-sm md:text-base leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                   of bike owners say they've been overcharged at least once. Don't be one of them.
                 </p>
               </div>
@@ -90,40 +82,34 @@ export default function WhyChoose() {
 
             <button
               onClick={() => navigate('/chat')}
-              className="text-white font-bold text-base px-8 py-4 rounded-2xl transition w-fit"
-              style={{ backgroundColor: '#E8192C' }}
+              className="btn-primary text-base px-8 py-4 rounded-2xl w-fit"
             >
               Try it free →
             </button>
           </div>
 
-          {/* Right — reason cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
             {reasons.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.title}
-                  className={`group rounded-2xl p-5 flex flex-col gap-3 border transition-all duration-300
-                    hover:-translate-y-0.5 glow-card
-                    ${index === 0 || index === 5 ? 'sm:col-span-2 sm:flex-row sm:items-center sm:gap-4' : ''}
+                  className={`group rounded-2xl p-6 flex flex-col gap-4 border glow-card animate-fade-in-up stagger-${(index % 6) + 1}
+                    ${index === 0 || index === 5 ? 'sm:col-span-2 sm:flex-row sm:items-center sm:gap-5' : ''}
                     ${isDark
                       ? 'bg-zinc-900/60 border-zinc-800 hover:border-[#E8192C]/30'
-                      : 'bg-white border-zinc-200 hover:border-[#E8192C]/20'
+                      : 'bg-white border-zinc-200/80 hover:border-[#E8192C]/20 shadow-[var(--shadow-soft)]'
                     }`}
                 >
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border
                     ${isDark ? 'bg-zinc-800 border-zinc-700' : 'bg-zinc-50 border-zinc-200'}`}>
-                    <Icon size={18} style={{ color: '#E8192C' }} />
+                    <Icon size={20} className="text-brand" />
                   </div>
                   <div>
-                    <h3
-                      className={`text-sm font-black uppercase mb-1 ${isDark ? 'text-white' : 'text-zinc-900'}`}
-                      style={{ fontFamily: 'Barlow Condensed, sans-serif' }}
-                    >
+                    <h3 className={`text-sm font-bold mb-1.5 ${isDark ? 'text-white' : 'text-zinc-900'}`}>
                       {item.title}
                     </h3>
-                    <p className={`text-xs leading-relaxed ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
+                    <p className={`text-xs leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-600'}`}>
                       {item.desc}
                     </p>
                   </div>
