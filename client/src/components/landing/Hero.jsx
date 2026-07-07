@@ -74,62 +74,76 @@ export default function Hero() {
   const { isDark } = useTheme();
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
-      <div className="flex-1 flex flex-col gap-6">
-        <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border w-fit"
-          style={{ color: '#E8192C', borderColor: '#E8192C33', backgroundColor: '#E8192C11' }}>
-          Free • No login • Hindi supported
-        </span>
-
-        <h1
-          className={`text-5xl md:text-7xl font-black uppercase leading-none tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}
-          style={{ fontFamily: 'Barlow Condensed, sans-serif' }}
-        >
-          Know what's wrong
-          <span className="block" style={{ color: '#E8192C' }}>
-            before the mechanic does.
-          </span>
-        </h1>
-
-        <p className={`text-base max-w-md leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
-          Describe your bike problem in plain language — Hindi, Hinglish, or English. BikeFixIt diagnoses the issue and tells you the fair repair cost so no one can overcharge you.
-        </p>
-
-        <div className="flex gap-3 items-center">
-          <button
-            onClick={() => navigate('/chat')}
-            className="text-white font-bold text-base px-8 py-4 rounded-2xl transition"
-            style={{ backgroundColor: '#E8192C' }}
-          >
-            Diagnose My Bike →
-          </button>
-          <a href="#how-it-works"
-            className={`text-sm font-medium transition ${isDark ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600'}`}>
-            How it works ↓
-          </a>
-        </div>
-
-        <div className="flex gap-6 pt-2">
-          {[
-            { num: '20+', label: 'Issues covered' },
-            { num: '3', label: 'Languages' },
-            { num: '₹0', label: 'Always free' },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="text-2xl font-black"
-                style={{ fontFamily: 'Barlow Condensed, sans-serif', color: '#E8192C' }}>
-                {s.num}
-              </p>
-              <p className={`text-xs uppercase tracking-wide ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
-                {s.label}
-              </p>
-            </div>
-          ))}
-        </div>
+    <section className="relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div
+          className={`absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-30 animate-pulse
+            ${isDark ? 'bg-[#E8192C]/20' : 'bg-[#E8192C]/10'}`}
+        />
+        <div
+          className={`absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full blur-[100px] opacity-20
+            ${isDark ? 'bg-red-900/30' : 'bg-red-100'}`}
+          style={{ animation: 'hero-drift 8s ease-in-out infinite alternate' }}
+        />
       </div>
 
-      <div className="flex-1 flex justify-center">
-        <ChatMockup />
+      <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-1 flex flex-col gap-6">
+          <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full border w-fit"
+            style={{ color: '#E8192C', borderColor: '#E8192C33', backgroundColor: '#E8192C11' }}>
+            Free • No login • Hindi supported
+          </span>
+
+          <h1
+            className={`text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight ${isDark ? 'text-white' : 'text-zinc-900'}`}
+            style={{ fontFamily: 'Barlow Condensed, sans-serif' }}
+          >
+            Know what's wrong
+            <span className="block" style={{ color: '#E8192C' }}>
+              before the mechanic does.
+            </span>
+          </h1>
+
+          <p className={`text-base max-w-md leading-relaxed ${isDark ? 'text-zinc-400' : 'text-zinc-500'}`}>
+            Describe your bike problem in plain language — Hindi, Hinglish, or English. BikeFixIt diagnoses the issue and tells you the fair repair cost so no one can overcharge you.
+          </p>
+
+          <div className="flex gap-3 items-center flex-wrap">
+            <button
+              onClick={() => navigate('/chat')}
+              className="text-white font-bold text-base px-8 py-4 rounded-2xl transition"
+              style={{ backgroundColor: '#E8192C' }}
+            >
+              Diagnose My Bike →
+            </button>
+            <a href="#how-it-helps"
+              className={`text-sm font-medium transition ${isDark ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600'}`}>
+              See how it helps ↓
+            </a>
+          </div>
+
+          <div className="flex gap-6 pt-2 flex-wrap">
+            {[
+              { num: '20+', label: 'Issues covered' },
+              { num: '3', label: 'Languages' },
+              { num: '₹0', label: 'Always free' },
+            ].map((s) => (
+              <div key={s.label}>
+                <p className="text-2xl font-black"
+                  style={{ fontFamily: 'Barlow Condensed, sans-serif', color: '#E8192C' }}>
+                  {s.num}
+                </p>
+                <p className={`text-xs uppercase tracking-wide ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:flex flex-1 justify-center">
+          <ChatMockup />
+        </div>
       </div>
     </section>
   );

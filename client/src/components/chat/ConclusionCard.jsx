@@ -1,3 +1,4 @@
+import { CheckCircle2 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext.jsx';
 
 export default function ConclusionCard({ conclusion, otherCauses }) {
@@ -5,18 +6,22 @@ export default function ConclusionCard({ conclusion, otherCauses }) {
 
   return (
     <div className="flex justify-start w-full">
-      <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm mr-2 mt-1 shrink-0"
-        style={{ backgroundColor: '#E8192C' }}>
-        🔧
+      <div className="w-8 h-8 rounded-full flex items-center justify-center mr-2 mt-1 shrink-0
+        bg-[#E8192C]/20 border border-[#E8192C]/40">
+        <CheckCircle2 size={16} style={{ color: '#E8192C' }} />
       </div>
       <div className="max-w-[80%] flex flex-col gap-3">
 
         {/* Primary conclusion */}
-        <div className={`rounded-2xl rounded-tl-sm px-4 py-4 flex flex-col gap-3 border
-          ${isDark ? 'bg-zinc-800 border-red-500/30' : 'bg-white border-red-200 shadow-sm'}`}>
-          <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#E8192C' }}>
-            Most likely cause
-          </span>
+        <div className={`rounded-2xl rounded-tl-sm px-4 py-4 flex flex-col gap-3 border-2
+          shadow-[0_0_24px_rgba(232,25,44,0.15)]
+          ${isDark ? 'bg-zinc-800 border-[#E8192C]/50' : 'bg-white border-[#E8192C]/30 shadow-sm'}`}>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={14} style={{ color: '#E8192C' }} />
+            <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#E8192C' }}>
+              Diagnosis complete
+            </span>
+          </div>
           <p className={`text-base font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>
             {conclusion.concluded_cause}
           </p>

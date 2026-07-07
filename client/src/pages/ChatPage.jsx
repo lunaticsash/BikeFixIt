@@ -188,7 +188,7 @@ export default function ChatPage() {
   );
 
   return (
-    <div className={`h-screen flex flex-col overflow-hidden transition-colors duration-300
+    <div className={`h-screen flex flex-col overflow-hidden transition-colors duration-300 animate-[fade-in-up_0.35s_ease-out_both]
       ${isDark ? 'bg-[#0f0e0d] text-white' : 'bg-zinc-50 text-zinc-900'}`}>
 
       {/* Header */}
@@ -250,17 +250,19 @@ export default function ChatPage() {
               'Bike mein knocking sound',
               'Mileage drop ho gayi',
               'Smoke from exhaust',
-            ].map((chip) => (
+            ].map((chip, index) => (
               <button
                 key={chip}
                 onClick={() => {
                   setInputText(chip);
                 }}
-                className={`text-xs px-4 py-2 rounded-full border transition
+                className={`chip-shimmer relative overflow-hidden text-xs px-4 py-2 rounded-full border transition
+                  animate-[fade-in-up_0.5s_ease-out_both]
                   ${isDark
                     ? 'border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200 bg-zinc-900'
                     : 'border-zinc-200 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white'
                   }`}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
                 {chip}
               </button>
