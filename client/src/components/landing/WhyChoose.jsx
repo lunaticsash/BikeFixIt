@@ -69,7 +69,7 @@ export default function WhyChoose() {
             </p>
 
             <div className={`rounded-2xl p-7 border glow-card
-              ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-zinc-50 border-zinc-200 shadow-[var(--shadow-soft)]'}`}>
+              ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-zinc-50 border-zinc-200 shadow-(--shadow-soft)'}`}>
               <div className="flex items-center gap-5">
                 <div className="text-5xl md:text-6xl font-extrabold text-brand shrink-0">
                   73%
@@ -98,7 +98,7 @@ export default function WhyChoose() {
                     ${index === 0 || index === 5 ? 'sm:col-span-2 sm:flex-row sm:items-center sm:gap-5' : ''}
                     ${isDark
                       ? 'bg-zinc-900/60 border-zinc-800 hover:border-[#E8192C]/30'
-                      : 'bg-white border-zinc-200/80 hover:border-[#E8192C]/20 shadow-[var(--shadow-soft)]'
+                      : 'bg-white border-zinc-200/80 hover:border-[#E8192C]/20 shadow-(--shadow-soft)'
                     }`}
                 >
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border

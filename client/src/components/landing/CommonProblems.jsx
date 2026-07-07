@@ -53,7 +53,7 @@ export default function CommonProblems() {
                 className={`group flex items-start gap-4 rounded-2xl p-6 border glow-card animate-fade-in-up stagger-${(index % 6) + 1}
                   ${isDark
                     ? 'bg-zinc-900/70 border-zinc-800 hover:border-[#E8192C]/30'
-                    : 'bg-zinc-50/80 border-zinc-200/80 hover:border-[#E8192C]/20 shadow-[var(--shadow-soft)]'
+                    : 'bg-zinc-50/80 border-zinc-200/80 hover:border-[#E8192C]/20 shadow-(--shadow-soft)'
                   }`}
               >
                 <div className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border

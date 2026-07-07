@@ -17,7 +17,7 @@ export default function Stats() {
 
   return (
     <section className={`py-20 md:py-24 border-y transition-colors relative overflow-hidden
-      ${isDark ? 'border-zinc-800 bg-zinc-950' : 'border-zinc-100 bg-gradient-to-b from-zinc-50/80 to-white'}`}>
+      ${isDark ? 'border-zinc-800 bg-zinc-950' : 'border-zinc-100 bg-linear-to-b from-zinc-50/80 to-white'}`}>
       <div aria-hidden className={`pointer-events-none absolute inset-0 opacity-40
         bg-[linear-gradient(90deg,transparent,rgba(232,25,44,0.05),transparent)]`}
       />

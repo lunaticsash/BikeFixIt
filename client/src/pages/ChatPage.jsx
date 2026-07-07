@@ -182,12 +182,12 @@ export default function ChatPage() {
         <div className="grid-pattern absolute inset-0 opacity-40" />
 
         <div
-          className="absolute -top-48 -left-40 h-[520px] w-[520px] rounded-full blur-[150px]"
+          className="absolute -top-48 -left-40 h-130 w-130 rounded-full blur-[150px]"
           style={{ background: "rgba(232,25,44,0.14)" }}
         />
 
         <div
-          className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full blur-[140px]"
+          className="absolute bottom-0 right-0 h-105 w-105 rounded-full blur-[140px]"
           style={{ background: "rgba(232,25,44,0.10)" }}
         />
       </div>
@@ -315,14 +315,14 @@ export default function ChatPage() {
             className={`shrink-0 px-4 py-3 border-t transition-colors
             ${isDark ? "border-zinc-800 bg-[#0f0e0d]" : "border-zinc-100 bg-white"}`}
           >
-             <InputBar
-     centered={false}
-     isDark={isDark}
-     inputText={inputText}
-     setInputText={setInputText}
-     handleSend={handleSend}
-     loading={loading}
-   />
+            <InputBar
+              centered={false}
+              isDark={isDark}
+              inputText={inputText}
+              setInputText={setInputText}
+              handleSend={handleSend}
+              loading={loading}
+            />
           </div>
         </>
       )}

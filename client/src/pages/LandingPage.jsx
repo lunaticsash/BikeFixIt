@@ -18,7 +18,7 @@ export default function LandingPage() {
     <div className={`min-h-screen transition-colors duration-300 animate-[fade-in-up_0.35s_ease-out_both]
       ${isDark ? 'bg-[#0f0e0d] text-white' : 'bg-white text-zinc-900'}
       bg-[linear-gradient(rgba(232,25,44,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(232,25,44,0.03)_1px,transparent_1px)]
-      bg-[size:48px_48px]`}>
+      bg-size-[48px_48px]`}>
       <Navbar />
       <Hero />
       <Stats />

@@ -46,12 +46,12 @@ export default function VehicleStrip() {
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className={`absolute -top-36 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-[140px]
+          className={`absolute -top-36 left-1/2 -translate-x-1/2 w-200 h-100 rounded-full blur-[140px]
           ${isDark ? "bg-[#E8192C]/12" : "bg-[#E8192C]/6"}`}
         />
 
         <div
-          className={`absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full blur-[120px]
+          className={`absolute bottom-0 right-0 w-87.5 h-87.5 rounded-full blur-[120px]
           ${isDark ? "bg-red-900/10" : "bg-red-100/60"}`}
         />
       </div>

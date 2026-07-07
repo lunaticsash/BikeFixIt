@@ -170,7 +170,7 @@ export default function Hero() {
 
         <div
 
-          className={`absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] opacity-25
+          className={`absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-175 h-175 rounded-full blur-[140px] opacity-25
 
             ${isDark ? 'bg-[#E8192C]/25' : 'bg-[#E8192C]/8'}`}
 
@@ -178,7 +178,7 @@ export default function Hero() {
 
         <div
 
-          className={`absolute top-1/3 right-0 w-[450px] h-[450px] rounded-full blur-[120px] opacity-15
+          className={`absolute top-1/3 right-0 w-112.5 h-112.5 rounded-full blur-[120px] opacity-15
 
             ${isDark ? 'bg-red-900/30' : 'bg-red-100/80'}`}
 

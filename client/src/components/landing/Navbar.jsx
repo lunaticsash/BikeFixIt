@@ -62,7 +62,7 @@ export default function Navbar() {
 
   return (
 
-    <div className={`sticky top-0 z-50 w-full px-4 sm:px-6 pt-4 relative transition-colors
+    <div className={`sticky top-0 z-50 w-full px-4 sm:px-6 pt-4 transition-colors
 
       ${isDark ? 'bg-[#0f0e0d]/80' : 'bg-white/60'}`}>
 
@@ -74,13 +74,13 @@ export default function Navbar() {
 
             ? 'bg-zinc-900/85 border-zinc-700/60 shadow-xl shadow-black/30'
 
-            : 'bg-white/85 border-zinc-200/80 shadow-[var(--shadow-elevated)]'
+            : 'bg-white/85 border-zinc-200/80 shadow-(--shadow-elevated)'
 
           : isDark
 
             ? 'bg-zinc-900/70 border-zinc-800 shadow-lg shadow-black/20'
 
-            : 'bg-white/75 border-zinc-100/80 shadow-[var(--shadow-soft)]'
+            : 'bg-white/75 border-zinc-100/80 shadow-(--shadow-soft)'
 
         }`}>
 
