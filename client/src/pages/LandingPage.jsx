@@ -8,6 +8,8 @@ import WhyChoose from '../components/landing/WhyChoose.jsx';
 import VehicleStrip from '../components/landing/VehicleStrip.jsx';
 import CallToAction from '../components/landing/CallToAction.jsx';
 import Footer from '../components/landing/Footer.jsx';
+import CommonProblems from '../components/landing/CommonProblems.jsx';
+import FAQ from '../components/landing/FAQ.jsx';
 
 export default function LandingPage() {
   const { isDark } = useTheme();
@@ -20,10 +22,12 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <Stats />
+      <CommonProblems/>
       <HowItHelps />
       <HowItWorks />
       <WhyChoose />
       <VehicleStrip />
+      <FAQ />
       <CallToAction />
       <Footer />
     </div>
