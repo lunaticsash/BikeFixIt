@@ -40,7 +40,7 @@ export default function MechanicComparison() {
           <div className={`rounded-2xl p-8 border animate-fade-in-up stagger-1
             ${isDark
               ? 'bg-zinc-800/60 border-zinc-700'
-              : 'bg-white border-zinc-200 shadow-[var(--shadow-soft)]'
+              : 'bg-white border-zinc-200 shadow-(--shadow-soft)'
             }`}>
             <div className="flex items-center gap-3 mb-6">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center
@@ -64,7 +64,7 @@ export default function MechanicComparison() {
           <div className={`rounded-2xl p-8 border glow-card animate-fade-in-up stagger-2
             ${isDark
               ? 'bg-zinc-800/80 border-[#E8192C]/30'
-              : 'bg-white border-[#E8192C]/20 shadow-[var(--shadow-elevated)]'
+              : 'bg-white border-[#E8192C]/20 shadow-(--shadow-elevated)'
             }`}>
             <div className="flex items-center gap-3 mb-6">
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center bg-brand/10`}>
