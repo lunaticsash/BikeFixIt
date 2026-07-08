@@ -3,7 +3,7 @@
 
 Describe your bike problem in Hindi, Hinglish, or English — BikeFixIt asks the right questions and tells you the exact fix + fair cost estimate so no mechanic can overcharge you.
 
-**[Live Demo →](link)**
+**[Live Demo →](https://bike-fix-it.vercel.app/)**
 
 ---
 
