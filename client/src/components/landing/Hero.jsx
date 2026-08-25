@@ -164,9 +164,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-32 flex flex-col md:flex-row items-center gap-16 md:gap-20">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 pt-16 pb-24 md:pt-10 md:pb-28 flex flex-col md:flex-row items-center gap-16 md:gap-20">
         <div className="animate1 flex-1 flex flex-col gap-8">
-          <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full badge-pill w-fit">
+          <span className="text-xs font-semibold uppercase tracking-widest px-4 py-1 rounded-full badge-pill w-fit">
             Free • No login • Hindi supported
           </span>
 
