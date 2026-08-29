@@ -5,6 +5,7 @@ import { DiagnosticSession } from '../models/DiagnosticSession.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { ApiError } from '../utils/ApiError.js';
+import { getCached, setCache } from '../services/cacheService.js';
 
 // POST /api/v1/diagnose
 export const diagnoseIssue = asyncHandler(async (req, res) => {
@@ -14,7 +15,16 @@ export const diagnoseIssue = asyncHandler(async (req, res) => {
     throw new ApiError(400, 'Issue message is required');
   }
 
-  // Step 1: Safety gate
+  // Step 1: Check cache first — skip Gemini + vector search if hit
+  const cached = await getCached(message);
+  if (cached) {
+    console.log('✅ Cache hit for:', message);
+    return res.status(200).json(
+      new ApiResponse(200, cached, 'Matches found (cached)')
+    );
+  }
+
+  // Step 2: Safety gate
   const safetyResult = checkSafetyGate(message);
   if (safetyResult.isUnsafe) {
     return res.status(200).json(
@@ -26,10 +36,10 @@ export const diagnoseIssue = asyncHandler(async (req, res) => {
     );
   }
 
-  // Step 2: Gemini interprets
+  // Step 3: Gemini interprets
   const interpretedIssue = await interpretBikeIssue(message);
 
-  // Step 3: Vector search
+  // Step 4: Vector search
   const matches = await findBestMatches(interpretedIssue);
 
   if (matches.length === 0) {
@@ -46,7 +56,7 @@ export const diagnoseIssue = asyncHandler(async (req, res) => {
     );
   }
 
-  // Step 4: Create a session in MongoDB
+  // Step 5: Create session in MongoDB
   const session = await DiagnosticSession.create({
     originalMessage: message,
     vehicleType: interpretedIssue.vehicle_type,
@@ -56,17 +66,18 @@ export const diagnoseIssue = asyncHandler(async (req, res) => {
     ],
   });
 
+  const responseData = {
+    type: 'match_found',
+    sessionId: session._id,
+    interpretedIssue,
+    matches,
+  };
+
+  // Step 6: Save to cache for next time (don't await — non-blocking)
+  setCache(message, responseData);
+
   return res.status(200).json(
-    new ApiResponse(
-      200,
-      {
-        type: 'match_found',
-        sessionId: session._id,
-        interpretedIssue,
-        matches,
-      },
-      'Matches found'
-    )
+    new ApiResponse(200, responseData, 'Matches found')
   );
 });
 
@@ -78,13 +89,10 @@ export const concludeIssue = asyncHandler(async (req, res) => {
     throw new ApiError(400, 'originalIssue, causes and qaHistory are required');
   }
 
-  // Get Gemini's conclusion
   const conclusion = await concludeDiagnosis(originalIssue, causes, qaHistory);
 
-  // Update session in MongoDB if sessionId exists
   if (sessionId) {
     const conversationUpdates = [
-      // Add all Q&A pairs to the conversation log
       ...qaHistory.flatMap((qa) => [
         { role: 'bot', content: qa.question },
         { role: 'user', content: qa.answer },
