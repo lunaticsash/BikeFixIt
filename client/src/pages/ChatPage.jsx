@@ -15,6 +15,15 @@ const INITIAL_MESSAGES = [
 
 const MAX_QUESTIONS = 3;
 
+const getErrorMessage = (err) => {
+  if (err.response?.status === 429) {
+    return "You've reached the hourly limit. Please try again in a while.";
+  }
+  return (
+    err.response?.data?.message || "Something went wrong. Please try again."
+  );
+};
+
 export default function ChatPage() {
   const navigate = useNavigate();
   const { isDark, toggleTheme } = useTheme();
@@ -39,10 +48,8 @@ export default function ChatPage() {
 
     try {
       const res = await apiClient.post("/diagnose/conclude", {
-        originalIssue: originalIssueRef.current,
-        causes: topMatchRef.current.causes,
-        qaHistory: qaHistoryRef.current,
         sessionId: sessionIdRef.current,
+        answers: qaHistoryRef.current.map((qa) => qa.answer),
       });
 
       const { conclusion } = res.data.data;
@@ -58,10 +65,7 @@ export default function ChatPage() {
           "That's my best diagnosis. Want to check another issue? Hit 'New Chat'.",
       });
     } catch (err) {
-      addMessage({
-        type: "bot",
-        content: "Something went wrong while concluding. Try again.",
-      });
+      addMessage({ type: "bot", content: getErrorMessage(err) });
     } finally {
       setLoading(false);
     }
@@ -146,10 +150,7 @@ export default function ChatPage() {
         }
       }
     } catch (err) {
-      addMessage({
-        type: "bot",
-        content: "Something went wrong. Check your connection and try again.",
-      });
+      addMessage({ type: "bot", content: getErrorMessage(err) });
     } finally {
       setLoading(false);
     }

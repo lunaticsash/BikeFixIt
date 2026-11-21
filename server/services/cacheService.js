@@ -1,28 +1,27 @@
-import { Redis } from '@upstash/redis';
+import crypto from 'crypto';
+import { redis } from './redisClient.js';
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
+const CACHE_VERSION = 'v2'; // KB reseed ya edit ke baad isse bump karo
+const TTL_SECONDS = 86400;
 
-// Cache a diagnosis result for 24 hours
-const cacheKey = (text) =>
-  `diagnosis:${text.toLowerCase().trim().slice(0, 100)}`;
+const cacheKey = (text) => {
+  const normalized = text.toLowerCase().replace(/\s+/g, ' ').trim();
+  const hash = crypto.createHash('sha256').update(normalized).digest('hex');
+  return `diagnosis:${CACHE_VERSION}:${hash}`;
+};
 
-export const getCached = async (userMessage) => {
+export const getCached = async (message) => {
   try {
-    const key = cacheKey(userMessage);
-    return await redis.get(key);
+    return await redis.get(cacheKey(message));
   } catch {
-    return null; // cache miss — continue normally
+    return null;
   }
 };
 
-export const setCache = async (userMessage, result) => {
+export const setCache = async (message, data) => {
   try {
-    const key = cacheKey(userMessage);
-    await redis.set(key, JSON.stringify(result), { ex: 86400 }); // 24hr TTL
+    await redis.set(cacheKey(message), data, { ex: TTL_SECONDS });
   } catch {
-    // cache write failure is non-critical — don't crash the app
+    // cache write failure non-critical
   }
 };

@@ -13,7 +13,8 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(express.json());
+app.set('trust proxy', 1);              // Render ek proxy ke peeche hai, warna req.ip proxy ka IP aayega
+app.use(express.json({ limit: '10kb' })); // bade payloads reject
 app.use("/api/v1/diagnose", diagnoseRouter);
 
 // Temporary route — just to prove the server is alive. Deleted once

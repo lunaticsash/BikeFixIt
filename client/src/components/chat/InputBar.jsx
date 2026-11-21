@@ -18,6 +18,7 @@ export default function InputBar({
       >
         <textarea
           rows={1}
+          maxLength={300}
           value={inputText}
           onChange={(e) => {
             setInputText(e.target.value);
